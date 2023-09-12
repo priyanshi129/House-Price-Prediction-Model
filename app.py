@@ -15,33 +15,7 @@ standard_to = StandardScaler()
 def predict(bathrooms, stories, parking, mainroad_yes, guestroom_yes,hotwaterheating_yes,airconditioning_yes,prefarea_yes, furnishingstatus_unfurnished):
     
     # processing user input
-    furnishingstatus_furnished=0
-    if(mainroad_yes=='Yes'):
-                mainroad_yes=1
-    else:
-                mainroad_yes=0
-    if(guestroom_yes=='Yes'):
-                guestroom_yes=1
-    else:
-                guestroom_yes=0
-    if(hotwaterheating_yes=='Yes'):
-                hotwaterheating_yes=1
-    else:
-                hotwaterheating_yes=0
-    if(airconditioning_yes=='Yes'):
-                airconditioning_yes=1
-    else:
-                airconditioning_yes=0
-    if(prefarea_yes=='Yes'):
-                prefarea_yes=1
-    else:
-                prefarea_yes=0
-    if(furnishingstatus_unfurnished=='unfurnished'):
-                furnishingstatus_unfurnished=1
-                furnishingstatus_furnished=0
-    else:
-                furnishingstatus_furnished=1
-                furnishingstatus_unfurnished=0
+    
     '''lists = [bathrooms, stories, parking, mainroad_yes, guestroom_yes,hotwaterheating_yes,airconditioning_yes,prefarea_yes, furnishingstatus_unfurnished]
     df = pd.DataFrame(lists).transpose()
     # scaling the data
@@ -103,6 +77,34 @@ def main():
                                       ("Yes","No"))
     furnishingstatus_unfurnished = st.selectbox('Do you want your house to be on mainroad?',
                                       ("Furnished","Unfurnished"))
+    
+    furnishingstatus_furnished=0
+    if(mainroad_yes=='Yes'):
+                mainroad_yes=1
+    else:
+                mainroad_yes=0
+    if(guestroom_yes=='Yes'):
+                guestroom_yes=1
+    else:
+                guestroom_yes=0
+    if(hotwaterheating_yes=='Yes'):
+                hotwaterheating_yes=1
+    else:
+                hotwaterheating_yes=0
+    if(airconditioning_yes=='Yes'):
+                airconditioning_yes=1
+    else:
+                airconditioning_yes=0
+    if(prefarea_yes=='Yes'):
+                prefarea_yes=1
+    else:
+                prefarea_yes=0
+    if(furnishingstatus_unfurnished=='unfurnished'):
+                furnishingstatus_unfurnished=1
+                furnishingstatus_furnished=0
+    else:
+                furnishingstatus_furnished=1
+                furnishingstatus_unfurnished=0
     
     
     button = st.button('Predict')
